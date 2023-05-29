@@ -1,0 +1,9 @@
+.imdb {
+  background-image: url("/images/spotify-background.jpeg");
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  margin: 375;
+  background-color: chartreuse;
+}
