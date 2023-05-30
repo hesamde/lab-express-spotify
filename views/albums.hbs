@@ -1,9 +1,10 @@
-<body>
+<body class="no-background">
   {{#each response.items}}
-    <div>
-      <a href="/albums/{{id}}">View Albums </a>
-      <img src="{{images.0.url}}" alt="{{name}}" />
+    <div class="no-background">
+      <a href="/albums/{{this.id}}">View Albums</a>
+      <img src="{{images.1.url}}" alt="{{name}}" />
       <h2>{{name}}</h2>
+      <a href="/tracks/{{id}}">View Tracks</a>
     </div>
   {{/each}}
 </body>
