@@ -1,9 +1,27 @@
-.imdb {
+body {
   background-image: url("/images/spotify-background.jpeg");
-  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
   display: flex;
-  flex-direction: column;
-  width: 375px;
-  margin: 375;
-  background-color: chartreuse;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.531);
+  padding: 90px 200px;
+}
+
+.no-background {
+  background-image: none;
+}
+.btn-color {
+  background-color: red;
+  color: white;
 }

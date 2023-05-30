@@ -16,10 +16,13 @@ const spotifyApi = new SpotifyWebApi({
   clientSecret: process.env.CLIENT_SECRET,
 });
 
-// Retrieve an access token
+// Retrieve an access tokenspotifyApi
 spotifyApi
   .clientCredentialsGrant()
-  .then((data) => spotifyApi.setAccessToken(data.body["access_token"]))
+  .then((data) => {
+    spotifyApi.setAccessToken(data.body["access_token"]);
+    // Make your API requests here
+  })
   .catch((error) =>
     console.log("Something went wrong when retrieving an access token", error)
   );
@@ -33,7 +36,7 @@ app.get("/albums/:artistId", (req, res, next) => {
   let artistId = req.params.artistId;
 
   spotifyApi.getArtistAlbums(artistId).then((data) => {
-    res.render("albuns", { response: data.body });
+    res.render("albums", { response: data.body });
   });
 });
 
@@ -50,6 +53,19 @@ app.get("/artist-search", (req, res) => {
     .catch((err) =>
       console.log("The error while searching artists occurred: ", err)
     );
+});
+app.get("/tracks/:albumId", (req, res, next) => {
+  let albumId = req.params.albumId;
+
+  spotifyApi
+    .getAlbumTracks(albumId)
+    .then((data) => {
+      res.render("tracks", { tracks: data.body.items });
+    })
+    .catch((error) => {
+      console.error("Error retrieving tracks:", error);
+      res.status(500).send("Error retrieving tracks");
+    });
 });
 
 app.listen(3000, () =>
