@@ -1,4 +1,4 @@
-body {
+.home-page-photo {
   background-image: url("/images/spotify-background.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,4 +24,42 @@ body {
 .btn-color {
   background-color: red;
   color: white;
+}
+
+.track-css {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  /* width: 600px; */
+  height: 60px;
+}
+.track-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: calc(25% - 40px);
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.531);
+}
+
+.track h3,
+.track span {
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+audio {
+  width: 100%;
 }
