@@ -37,20 +37,21 @@ body {
 .track-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 0 6rem 6rem 6rem;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: rgb(97, 93, 93);
 }
 
 .track {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  width: calc(25% - 40px);
-  margin-bottom: 40px;
-  background-color: rgba(255, 255, 255, 0.531);
+  padding: 1.5rem;
+  width: 24%;
+  background-color: violet;
 }
 
 .track h3,
